@@ -1,20 +1,64 @@
-import React from "react";
+import React, { useContext, useEffect, useState } from "react";
 import Layout from "./Layout";
 import { Card, Button, Form } from "react-bootstrap";
-import SignUp from "./SignUp";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
+import { toast } from "react-toastify";
+import UserContext from "../contexts/UserContext";
 
 const Login = () => {
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const userContext = useContext(UserContext);
+  let navigate = useNavigate();
+
+  useEffect(() => {
+    console.log(userContext.authToken);
+    if (userContext.authToken) {
+      toast.info("Already logged in");
+      navigate("/", { replace: true });
+    }
+  }, []);
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    fetch("http://localhost:8000/register", {
+      method: "POST",
+      headers: {
+        Accept: "application/json",
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        email,
+        password,
+      }),
+    })
+      .then(function (response) {
+        console.log(response);
+        toast.success("Login Successfully");
+        userContext.setAuthToken(response.status); // TODO: change it to response.body.auth_token
+      })
+      .catch(function (error) {
+        console.log(error);
+        toast.error("login failed");
+      });
+  };
+
   return (
     <Layout>
       <div className="container">
         <Card className="m-5">
           <Card.Header className="text-center">Login</Card.Header>
           <Card.Body>
-            <Form>
+            <Form onSubmit={handleSubmit}>
               <Form.Group className="mb-3" controlId="formBasicEmail">
                 <Form.Label>Email address</Form.Label>
-                <Form.Control type="email" placeholder="Enter email" />
+                <Form.Control
+                  type="email"
+                  placeholder="Enter email"
+                  name="email"
+                  value={email}
+                  onChange={(e) => setEmail(e.target.value)}
+                />
                 <Form.Text className="text-muted">
                   We'll never share your email with anyone else.
                 </Form.Text>
@@ -22,7 +66,13 @@ const Login = () => {
 
               <Form.Group className="mb-3" controlId="formBasicPassword">
                 <Form.Label>Password</Form.Label>
-                <Form.Control type="password" placeholder="Password" />
+                <Form.Control
+                  type="password"
+                  placeholder="Password"
+                  name="password"
+                  value={password}
+                  onChange={(e) => setPassword(e.target.value)}
+                />
               </Form.Group>
               <Button variant="success" type="submit">
                 Login

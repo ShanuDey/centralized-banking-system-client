@@ -12,7 +12,7 @@ const SignUp = () => {
   const [contact, setContact] = useState("");
   const [password, setPassword] = useState("");
 
-  const handleSubmit = async (e) => {
+  const handleSubmit = (e) => {
     e.preventDefault();
     fetch("http://localhost:8000/register", {
       method: "POST",
