@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import Layout from "./Layout";
 import { Card, Form, Button, Row, Col } from "react-bootstrap";
 import { Link } from "react-router-dom";
+import { toast } from "react-toastify";
 
 const SignUp = () => {
   const [firstName, setFirstName] = useState("");
@@ -11,7 +12,7 @@ const SignUp = () => {
   const [contact, setContact] = useState("");
   const [password, setPassword] = useState("");
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     fetch("http://localhost:8000/register", {
       method: "POST",
@@ -30,11 +31,11 @@ const SignUp = () => {
     })
       .then(function (response) {
         console.log(response);
-        alert("Registered successfully");
+        toast.success("Registered Successfully");
       })
       .catch(function (error) {
         console.log(error);
-        alert("Registration failed");
+        toast.error("Registration failed");
       });
   };
 
