@@ -9,7 +9,7 @@ import "react-toastify/dist/ReactToastify.css";
 import UserContext from "./contexts/UserContext";
 
 function App() {
-  const [authToken, setAuthToken] = useState();
+  const [authToken, setAuthToken] = useState("");
 
   return (
     <>

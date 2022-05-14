@@ -12,8 +12,7 @@ const Login = () => {
   let navigate = useNavigate();
 
   useEffect(() => {
-    console.log(userContext.authToken);
-    if (userContext.authToken) {
+    if (userContext.authToken !== "") {
       toast.info("Already logged in");
       navigate("/", { replace: true });
     }
@@ -36,6 +35,7 @@ const Login = () => {
         console.log(response);
         toast.success("Login Successfully");
         userContext.setAuthToken(response.status); // TODO: change it to response.body.auth_token
+        navigate("/", { replace: true });
       })
       .catch(function (error) {
         console.log(error);
