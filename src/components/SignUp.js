@@ -1,6 +1,8 @@
 import React from "react";
 import Layout from "./Layout";
 import { Card, Form, Button, Row, Col } from "react-bootstrap";
+import { Link } from "react-router-dom";
+import Login from "./Login";
 
 const SignUp = () => {
   return (
@@ -46,6 +48,11 @@ const SignUp = () => {
                 Register
               </Button>
             </Form>
+            <div className="text-center">
+              or
+              <br />
+              <Link to="/login">Already have an account</Link>
+            </div>
           </Card.Body>
         </Card>
       </div>

@@ -1,6 +1,8 @@
 import React from "react";
 import Layout from "./Layout";
 import { Card, Button, Form } from "react-bootstrap";
+import SignUp from "./SignUp";
+import { Link } from "react-router-dom";
 
 const Login = () => {
   return (
@@ -27,6 +29,11 @@ const Login = () => {
               </Button>
             </Form>
           </Card.Body>
+          <div className="text-center mb-3">
+            or
+            <br />
+            <Link to="/signup">Create an account</Link>
+          </div>
         </Card>
       </div>
     </Layout>
