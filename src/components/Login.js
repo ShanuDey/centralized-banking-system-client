@@ -14,7 +14,7 @@ const Login = () => {
   useEffect(() => {
     if (userContext.authToken !== "") {
       toast.info("Already logged in");
-      navigate("/", { replace: true });
+      navigate("/dashboard", { replace: true });
     }
   }, []);
 
@@ -35,7 +35,7 @@ const Login = () => {
         console.log(response);
         toast.success("Login Successfully");
         userContext.setAuthToken(response.status); // TODO: change it to response.body.auth_token
-        navigate("/", { replace: true });
+        navigate("/dashboard", { replace: true });
       })
       .catch(function (error) {
         console.log(error);
