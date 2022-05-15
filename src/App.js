@@ -23,7 +23,7 @@ function App() {
         </Routes>
       </UserContext.Provider>
       <ToastContainer
-        position="bottom-center"
+        position="bottom-right"
         autoClose={5000}
         hideProgressBar={false}
         newestOnTop={false}
