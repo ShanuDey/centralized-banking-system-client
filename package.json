@@ -1,7 +1,7 @@
 {
   "name": "centralized-banking-system-client",
   "version": "0.1.0",
-  "homepage": "https://shanudey.github.io",
+  "homepage": "https://shanudey.github.io/centralized-banking-system-client",
   "private": true,
   "dependencies": {
     "@testing-library/jest-dom": "^5.16.4",
