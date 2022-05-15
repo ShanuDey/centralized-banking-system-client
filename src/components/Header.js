@@ -15,7 +15,9 @@ const Header = () => {
   return (
     <Navbar bg="light" expand="lg">
       <Container fluid>
-        <Navbar.Brand href="/">CBS</Navbar.Brand>
+        <Navbar.Brand as={Link} to="/">
+          CBS
+        </Navbar.Brand>
         <Navbar.Toggle aria-controls="navbarScroll" />
         <Navbar.Collapse id="navbarScroll">
           <Nav className="justify-content-end flex-grow-1 pe-3">
