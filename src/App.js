@@ -7,6 +7,7 @@ import Home from "./components/Home";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import UserContext from "./contexts/UserContext";
+import Dashboard from "./components/Dashboard";
 
 function App() {
   const [authToken, setAuthToken] = useState("");
@@ -18,6 +19,7 @@ function App() {
           <Route path="/" element={<Home />} />
           <Route path="login" element={<Login />} />
           <Route path="signup" element={<SignUp />} />
+          <Route path="dashboard" element={<Dashboard />} />
         </Routes>
       </UserContext.Provider>
       <ToastContainer
