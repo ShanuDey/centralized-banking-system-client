@@ -1,18 +1,17 @@
-import React, { useContext, useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 import Bank from "./Bank";
 import Layout from "./Layout";
 import { Card, Button } from "react-bootstrap";
-import BankContext from "../contexts/BankContext";
 import Branch from "./Branch";
 import { toast } from "react-toastify";
-import TokenButton from "./TokenButton";
+import Token from "./Token";
 
 const Dashboard = () => {
-  const bankContext = useContext(BankContext);
   const [banks, setBanks] = useState([]);
   const [selectedBank, setSelectedBank] = useState("");
   const [branches, setBranches] = useState([]);
   const [selectedBranch, setSelectedBranch] = useState("");
+  const [token, setToken] = useState({});
 
   useEffect(() => {
     const fetchData = async () => {
@@ -77,33 +76,38 @@ const Dashboard = () => {
       if (response.status === 200) {
         const result = await response.json();
         console.log(result);
+        setToken(result);
       }
     };
     fetchData().catch(console.error);
   };
 
+  const isTokenReceived = () => {
+    return Object.keys(token).length !== 0;
+  };
+
   return (
     <Layout>
-      <Card className="text-center">
+      <Card className="text-center mb-5">
         <Card.Header>CBS</Card.Header>
         <Card.Body>
           <Card.Title>Bank Management</Card.Title>
-          <BankContext.Provider value={banks}>
-            <Bank optionValues={banks} setSelectedBank={hanldeBankSelect} />
-            {selectedBank !== "" && (
-              <Branch
-                optionValues={branches}
-                setSelectedBranch={setSelectedBranch}
-              />
-            )}
-            {selectedBranch !== "" && (
-              <Button variant="outline-primary" onClick={handleTokenGeneration}>
-                Generate Token
-              </Button>
-            )}
-          </BankContext.Provider>
+          <Bank optionValues={banks} setSelectedBank={hanldeBankSelect} />
+          {selectedBank !== "" && (
+            <Branch
+              optionValues={branches}
+              setSelectedBranch={setSelectedBranch}
+            />
+          )}
+          {selectedBranch !== "" && (
+            <Button variant="outline-primary" onClick={handleTokenGeneration}>
+              Generate Token
+            </Button>
+          )}
         </Card.Body>
       </Card>
+
+      {isTokenReceived() && <Token token={token} />}
     </Layout>
   );
 };
