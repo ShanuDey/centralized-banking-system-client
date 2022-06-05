@@ -16,7 +16,7 @@ const Dashboard = () => {
   useEffect(() => {
     const fetchData = async () => {
       const response = await toast.promise(
-        fetch("https://raw.githubusercontent.com/ShanuDey/centralized-banking-system-client/test/dummy_api_data/banks.json"),
+        fetch("https://raw.githubusercontent.com/ShanuDey/centralized-banking-system-client/master/dummy_api_data/banks.json"),
         {
           pending: "Fetching Bank Details",
           success: "Bank Details received 👌",
@@ -36,7 +36,7 @@ const Dashboard = () => {
   const fetchBranchDetails = () => {
     const fetchData = async () => {
       const response = await toast.promise(
-        fetch("https://raw.githubusercontent.com/ShanuDey/centralized-banking-system-client/test/dummy_api_data/branches.json", {
+        fetch("https://raw.githubusercontent.com/ShanuDey/centralized-banking-system-client/master/dummy_api_data/branches.json", {
           method: "GET",
         }),
         {
@@ -63,7 +63,7 @@ const Dashboard = () => {
   const handleTokenGeneration = () => {
     const fetchData = async () => {
       const response = await toast.promise(
-        fetch("https://raw.githubusercontent.com/ShanuDey/centralized-banking-system-client/test/dummy_api_data/token.json", {
+        fetch("https://raw.githubusercontent.com/ShanuDey/centralized-banking-system-client/master/dummy_api_data/token.json", {
           method: "GET",
         }),
         {

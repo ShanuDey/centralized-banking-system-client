@@ -14,7 +14,7 @@ const SignUp = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    fetch("https://raw.githubusercontent.com/ShanuDey/centralized-banking-system-client/test/dummy_api_data/register_response.json", {
+    fetch("https://raw.githubusercontent.com/ShanuDey/centralized-banking-system-client/master/dummy_api_data/register_response.json", {
       method: "POST",
       headers: {
         Accept: "application/json",
