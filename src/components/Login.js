@@ -21,15 +21,16 @@ const Login = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     fetch("https://raw.githubusercontent.com/ShanuDey/centralized-banking-system-client/master/dummy_api_data/login_response.json", {
+      // TODO: use POST request for backend post request
       // method: "POST",
-      headers: {
-        Accept: "application/json",
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({
-        email,
-        password,
-      }),
+      // headers: {
+      //   Accept: "application/json",
+      //   "Content-Type": "application/json",
+      // },
+      // body: JSON.stringify({
+      //   email,
+      //   password,
+      // }),
     })
       .then(function (response) {
         console.log(response);

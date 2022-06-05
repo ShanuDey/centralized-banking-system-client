@@ -15,19 +15,20 @@ const SignUp = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     fetch("https://raw.githubusercontent.com/ShanuDey/centralized-banking-system-client/master/dummy_api_data/register_response.json", {
-      method: "POST",
-      headers: {
-        Accept: "application/json",
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({
-        firstName,
-        middleName,
-        lastName,
-        email,
-        contact,
-        password,
-      }),
+      // TODO: use POST request for backend post request
+      // method: "POST",
+      // headers: {
+      //   Accept: "application/json",
+      //   "Content-Type": "application/json",
+      // },
+      // body: JSON.stringify({
+      //   firstName,
+      //   middleName,
+      //   lastName,
+      //   email,
+      //   contact,
+      //   password,
+      // }),
     })
       .then(function (response) {
         console.log(response);
