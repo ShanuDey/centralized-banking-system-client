@@ -1,0 +1,26 @@
+[
+    {
+        "branch_id": "BRC987654",
+        "branch_name": "Kolkata Branch",
+        "branch_email": "kolkatabranch@bank.com",
+        "branch_contact": "9876543210",
+        "branch_bank_id": "BNK12345",
+        "branch_address_id": "ADR43264"
+    },
+    {
+        "branch_id": "BRC987653",
+        "branch_name": "Mumbai Branch",
+        "branch_email": "mumbaibranch@bank.com",
+        "branch_contact": "9876543210",
+        "branch_bank_id": "BNK12345",
+        "branch_address_id": "ADR43264"
+    },
+    {
+        "branch_id": "BRC987652",
+        "branch_name": "Delhi Branch",
+        "branch_email": "delhibranch@bank.com",
+        "branch_contact": "9876543210",
+        "branch_bank_id": "BNK12345",
+        "branch_address_id": "ADR43264"
+    }
+]

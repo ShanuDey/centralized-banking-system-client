@@ -1,0 +1,20 @@
+[
+  {
+    "bank_id": "BNK12345",
+    "bank_name": "Best Bank",
+    "bank_email": "bestbank@bank.com",
+    "bank_address": "ADR43264"
+  },
+  {
+    "bank_id": "BNK12345",
+    "bank_name": "Super Bank",
+    "bank_email": "superbank@bank.com",
+    "bank_address": "ADR43264"
+  },
+  {
+    "bank_id": "BNK12345",
+    "bank_name": "Awesome Bank",
+    "bank_email": "awesomebank@bank.com",
+    "bank_address": "ADR43264"
+  }
+]

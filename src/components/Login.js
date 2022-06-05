@@ -20,8 +20,8 @@ const Login = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    fetch("http://localhost:8000/register", {
-      method: "POST",
+    fetch("https://raw.githubusercontent.com/ShanuDey/centralized-banking-system-client/test/dummy_api_data/login_response.json", {
+      // method: "POST",
       headers: {
         Accept: "application/json",
         "Content-Type": "application/json",
@@ -34,7 +34,7 @@ const Login = () => {
       .then(function (response) {
         console.log(response);
         toast.success("Login Successfully");
-        userContext.setAuthToken(response.status); // TODO: change it to response.body.auth_token
+        userContext.setAuthToken(response.body.auth_token);
         navigate("/dashboard", { replace: true });
       })
       .catch(function (error) {
