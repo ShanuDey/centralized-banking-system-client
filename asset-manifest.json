@@ -1,13 +1,13 @@
 {
   "files": {
     "main.css": "/centralized-banking-system-client/static/css/main.eab33799.css",
-    "main.js": "/centralized-banking-system-client/static/js/main.6510b244.js",
+    "main.js": "/centralized-banking-system-client/static/js/main.be44906b.js",
     "index.html": "/centralized-banking-system-client/index.html",
     "main.eab33799.css.map": "/centralized-banking-system-client/static/css/main.eab33799.css.map",
-    "main.6510b244.js.map": "/centralized-banking-system-client/static/js/main.6510b244.js.map"
+    "main.be44906b.js.map": "/centralized-banking-system-client/static/js/main.be44906b.js.map"
   },
   "entrypoints": [
     "static/css/main.eab33799.css",
-    "static/js/main.6510b244.js"
+    "static/js/main.be44906b.js"
   ]
 }
